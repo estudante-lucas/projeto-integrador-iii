@@ -10,17 +10,17 @@ const sequelize = new Sequelize(process.env.DB_DATABASE!, process.env.DB_USER!, 
 
 interface AtributosComunsType extends Object {
   id: number;
-  criadoPor: string;
-  atualizadoPor: string;
+  criadoPor: number;
+  atualizadoPor: number;
   criadoEm: Date,
   atualizadoEm: Date,
   apagadoEm: Date,
 }
 
-interface AtributosComunsModelo extends Model<InferAttributes<AtributosComunsModelo>, InferCreationAttributes<AtributosComunsModelo>> {
+interface AtributosComunsModel extends Model<InferAttributes<AtributosComunsModel>, InferCreationAttributes<AtributosComunsModel>> {
   id: number;
-  criadoPor: string;
-  atualizadoPor: string;
+  criadoPor: number;
+  atualizadoPor: number;
   criadoEm: Date,
   atualizadoEm: Date,
   apagadoEm: Date,
@@ -33,16 +33,16 @@ const atributosComuns: ModelAttributes = {
     autoIncrement: true,
   },
   criadoPor: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true
   },
   atualizadoPor: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true
   },
 };
 
-const define = <T extends AtributosComunsModelo>(modelName: string, fields: ModelAttributes, options?:  ModelOptions) => {
+const define = <T extends AtributosComunsModel>(modelName: string, fields: ModelAttributes, options?:  ModelOptions) => {
   const modelOptions: ModelOptions = {
     ...options,
     createdAt: 'criadoEm',
@@ -65,8 +65,7 @@ export {
   define,
 };
 export type {
-  AtributosComunsModelo,
+  AtributosComunsModel,
   AtributosComunsType
 };
-
 

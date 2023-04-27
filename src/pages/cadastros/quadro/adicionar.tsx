@@ -1,9 +1,9 @@
-import UsuarioAdicionar from '@/components/usuario/UsuarioAdicionar';
+import QuadroAdicionar from '@/components/quadro/QuadroAdicionar';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Button } from '@mui/material';
 import { useRouter } from 'next/router';
 
-function AdicionarUsuario() {
+function AdicionarQuadro() {
     const router = useRouter()
 
     const handleBack = () => {
@@ -16,9 +16,9 @@ function AdicionarUsuario() {
                 <ArrowBackIcon />
                 Voltar
             </Button>
-            <UsuarioAdicionar onSucess={handleBack} />
+            <QuadroAdicionar onSucess={handleBack} />
         </div>
     )
 }
 
-export default AdicionarUsuario
+export default AdicionarQuadro

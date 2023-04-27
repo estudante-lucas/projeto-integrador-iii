@@ -2,7 +2,7 @@ import { salvar } from '@/services/UsuarioService'
 import { UsuarioType } from '@/types/UsuarioType'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { ValidationError } from 'sequelize'
-import Validation from './exception/Validation'
+import Validation from '../error/Validation'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<UsuarioType | Validation[]>) {
   if (req.method === 'POST') {

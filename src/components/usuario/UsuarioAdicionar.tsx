@@ -1,6 +1,5 @@
 import { post } from '@/services/FecthService';
 import { Button, TextField } from '@mui/material';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 interface UsuarioAdicionarProps {
@@ -8,7 +7,6 @@ interface UsuarioAdicionarProps {
 }
 
 const UsuarioAdicionar = ({onSucess}: UsuarioAdicionarProps) => {
-    const router = useRouter();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
 
@@ -41,7 +39,7 @@ const UsuarioAdicionar = ({onSucess}: UsuarioAdicionarProps) => {
 
     return (
         <div>
-            <h2>Adicionar Usuário</h2>
+            <h1>Adicionar Usuário</h1>
             <TextField
                 label="Nome"
                 value={nome}

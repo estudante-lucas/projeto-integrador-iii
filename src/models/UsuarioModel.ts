@@ -1,7 +1,7 @@
-import { AtributosComunsModelo, define } from "@/utils/sequelize";
+import { AtributosComunsModel, define } from "@/utils/sequelize";
 import { DataTypes } from "sequelize";
 
-interface UsuarioModel extends AtributosComunsModelo {
+interface UsuarioModel extends AtributosComunsModel {
   nome: string,
   email: string,
   senha: string,
